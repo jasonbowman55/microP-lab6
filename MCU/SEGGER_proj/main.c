@@ -158,9 +158,9 @@ int main(void) {
   USART_TypeDef * USART = initUSART(USART1_ID, 125000);
 
   // enable SPI I/Os
-  pinMode(PB3, GPIO_ALT); // SPI1_SCK //D1
-  pinMode(PB4, GPIO_ALT); // SPI1_MISO //D0
-  pinMode(PB5, GPIO_ALT); // SPI1_MOSI //D7
+  pinMode(PB3, GPIO_ALT); // SPI1_SCK
+  pinMode(PB4, GPIO_ALT); // SPI1_MISO
+  pinMode(PB5, GPIO_ALT); // SPI1_MOSI
 
   // Configure alternate function MUXs routing SPI lines correctly
   GPIOB->AFR[0] |= (0b101 << GPIO_AFRL_AFSEL3_Pos);   //AF5
