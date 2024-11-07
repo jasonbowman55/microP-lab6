@@ -42,11 +42,11 @@ int updateLEDStatus(char request[])
 	int led_status = 0;
 	// The request has been received. now process to determine whether to turn the LED on or off
 	if (inString(request, "ledoff")==1) {
-		digitalWrite(LED_PIN, PIO_LOW);
+		digitalWrite(PB6, PIO_LOW);
 		led_status = 0;
 	}
 	else if (inString(request, "ledon")==1) {
-		digitalWrite(LED_PIN, PIO_HIGH);
+		digitalWrite(PB6, PIO_HIGH);
 		led_status = 1;
 	}
 
@@ -148,7 +148,7 @@ int main(void) {
   gpioEnable(GPIO_PORT_C);
 
   // enable PB0 to be output to toggle the LED
-  pinMode(PB0, GPIO_OUTPUT);
+  pinMode(PB6, GPIO_OUTPUT);
   
   // enable timer clk and initialize timer peripheral
   RCC->APB2ENR |= (RCC_APB2ENR_TIM15EN);
