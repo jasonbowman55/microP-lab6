@@ -218,7 +218,7 @@ int main(void) {
     sprintf(temp_send,"Temperature: %f C", currentTemp);
     // **********
 
-    // send webpage over UART
+    // send webpage over UART..
     sendString(USART, webpageStart); // start the webpage
     sendString(USART, ledStr);       // send LED data to website
     sendString(USART, tempStr);      // send temp data to website
